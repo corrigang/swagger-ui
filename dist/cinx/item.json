@@ -1,0 +1,150 @@
+{
+    "basePath": "https://api.cinx.com",
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "resourcePath": "/item",
+    "apis": [
+        {
+            "path": "/sub/{sub-guid}/item/hphcode/{hph-code}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Get the full details of the of the item with the given HPH Code",
+                    "nickname": "getItemDetails",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "sub-guid",
+                            "type": "string",
+                            "required": true,
+                            "description": "GUID of the subscription, from earlier subscription query"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "hph-code",
+                            "type": "string",
+                            "required": true,
+                            "description": "HPH Code, such as 005VC9988"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        },
+        {
+            "path": "/sub/{sub-guid}/item/hphcode/{hph-code}/price",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Get the current price of the item, with the given HPH Code",
+                    "nickname": "getItemCurrentActivePrice",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "sub-guid",
+                            "type": "string",
+                            "required": true,
+                            "description": "GUID of the subscription, from earlier subscription query"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "hph-code",
+                            "type": "string",
+                            "required": true,
+                            "description": "HPH Code, such as 005VC9988"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        },
+        {
+            "path": "/sub/{sub-guid}/item/hphcode/{hph-code}/urls",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Get the associated URLs of the item, with the given HPH Code",
+                    "nickname": "getItemUrls",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "sub-guid",
+                            "type": "string",
+                            "required": true,
+                            "description": "GUID of the subscription, from earlier subscription query"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "hph-code",
+                            "type": "string",
+                            "required": true,
+                            "description": "HPH Code, such as 005VC9988"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        },
+        {
+            "path": "/sub/{sub-guid}/item/hphcodes",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Get the full details of the of the item with the given HPH Code",
+                    "nickname": "getItemDetails",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "sub-guid",
+                            "type": "string",
+                            "required": true,
+                            "description": "GUID of the subscription, from earlier subscription query"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "values",
+                            "type": "string",
+                            "required": false,
+                            "description": "A comma-separated list of HPH Codes, such as 005VC9988,005VC9989,005VC9990"
+                        },
+                        {
+                            "paramType": "body",
+                            "name": "values",
+                            "type": "string",
+                            "required": false,
+                            "description": "A comma-separated list of HPH Codes, such as 005VC9988,005VC9989,005VC9990"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        }
+    ],
+    "produces": [
+        "application/json"
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "basePath": "https://api.cinx.com",
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "resourcePath": "/user",
+    "apis": [
+        {
+            "path": "/sub/user/authenticate",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Verify a User's Credentials",
+                    "nickname": "authenticateUser",
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        },
+        {
+            "path": "/sub/user/subscriptions",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Return a JSON list of a User's available subscriptions",
+                    "nickname": "getUserSubscriptions",
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        },
+        {
+            "path": "/sub/user/subscriptions/{type}/{sub-type}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Return a filtered JSON list of a User's available subscriptions",
+                    "nickname": "getUserSubscriptionsSpecific",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "type",
+                            "type": "string",
+                            "required": true,
+                            "description": "Top-level subscription type filter",
+                            "enum": [
+                                "data-source",
+                                "integration"
+                            ]
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "sub-type",
+                            "type": "string",
+                            "required": true,
+                            "description": "Sub-type subscription type filter",
+                            "enum": [
+                                "partner",
+                                "vendor",
+                                "erp",
+                                "import-export"
+                            ]
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        }
+    ],
+    "produces": [
+        "application/json"
+    ]
+}

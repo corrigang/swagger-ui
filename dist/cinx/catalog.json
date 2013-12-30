@@ -1,0 +1,169 @@
+{
+    "basePath": "https://api.cinx.com",
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "resourcePath": "/catalog",
+    "apis": [
+        {
+            "path": "/sub/{sub-id}/catalog/add/item",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Add the given existing public catalog item to the subscription's private catalog",
+                    "nickname": "addItemFromCatalog",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "sub-id",
+                            "type": "string",
+                            "required": true,
+                            "description": "GUID of the subscription, from earlier subscription query"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol. "
+                }
+            ]
+        },
+        {
+            "path": "/sub/{sub-id}/catalog/add/item/{domain-id}/{item-id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Add the given existing public catalog item to the subscription's private catalog",
+                    "nickname": "addItemFromCatalog",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "sub-id",
+                            "type": "string",
+                            "required": true,
+                            "description": "GUID of the subscription, from earlier subscription query"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "domain-id",
+                            "type": "string",
+                            "required": true,
+                            "description": "The CINX domain of the item, from the cinx_id.id field"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "item-id",
+                            "type": "string",
+                            "required": true,
+                            "description": "The CINX ID of the item you wish to delete, from the cinx_id.domain field"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol. "
+                }
+            ]
+        },
+        {
+            "path": "/sub/{sub-id}/catalog/add/non-catalog/item",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Add a new custom item to the subscription's private catalog",
+                    "nickname": "addNonCatalogItem",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "sub-id",
+                            "type": "string",
+                            "required": true,
+                            "description": "GUID of the subscription, from earlier subscription query"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol. "
+                }
+            ]
+        },
+        {
+            "path": "/sub/{sub-id}/catalog/item/{item-id}/delete",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Delete the given item from the subscription's private catalog",
+                    "nickname": "deleteItemLink",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "sub-id",
+                            "type": "string",
+                            "required": true,
+                            "description": "GUID of the subscription, from earlier subscription query"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "item-id",
+                            "type": "string",
+                            "required": true,
+                            "description": "The CINX ID of the item you wish to delete, from the cinx_id.id field"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol. "
+                }
+            ]
+        },
+        {
+            "path": "/sub/{sub-id}/catalog/item/{item-id}/modify",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Modify the given private catalog item",
+                    "nickname": "modifyItemLink",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "sub-id",
+                            "type": "string",
+                            "required": true,
+                            "description": "GUID of the subscription, from earlier subscription query"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "item-id",
+                            "type": "string",
+                            "required": true,
+                            "description": "The CINX ID of the item you wish to delete, from the cinx_id.domain field"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol. "
+                }
+            ]
+        }
+    ],
+    "produces": [
+        "application/json"
+    ]
+}

@@ -1,0 +1,166 @@
+{
+    "basePath": "https://api.cinx.com",
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "resourcePath": "/ipu",
+    "apis": [
+        {
+            "path": "/sub/{app-id-guid})/ipu/update/download/{update-id}/{update-type}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Download a specific update file for given subscription app.",
+                    "nickname": "applyUpdate",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "app-id-guid",
+                            "type": "string",
+                            "required": true,
+                            "description": "The GUID-style ID in the apps.id section of the user's subscription"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "update-id",
+                            "type": "string",
+                            "required": true,
+                            "description": "The identifier of the update from the updates query (field rows[x].cinx_id.id)"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "update-type",
+                            "type": "string",
+                            "required": true,
+                            "description": "The identifier of the update, from the Update queries",
+                            "enum": [
+                                "BULLETIN",
+                                "DATA-FILE"
+                            ]
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        },
+        {
+            "path": "/sub/{app-id-guid})/ipu/updates/all",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Enumerate all updates associated with the given subscription app.",
+                    "nickname": "applyUpdate",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "app-id-guid",
+                            "type": "string",
+                            "required": true,
+                            "description": "The GUID-style ID in the apps.id section of the user's subscription"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        },
+        {
+            "path": "/sub/{app-id-guid})/ipu/updates/applied",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Enumerate applied updates associated with the given subscription app.",
+                    "nickname": "applyUpdate",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "app-id-guid",
+                            "type": "string",
+                            "required": true,
+                            "description": "The GUID-style ID in the apps.id section of the user's subscription"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        },
+        {
+            "path": "/sub/{app-id-guid})/ipu/updates/new",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Enumerate new updates associated with the given subscription app.",
+                    "nickname": "applyUpdate",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "app-id-guid",
+                            "type": "string",
+                            "required": true,
+                            "description": "The GUID-style ID in the apps.id section of the user's subscription"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        },
+        {
+            "path": "/sub/{app-id-guid}/ipu/update/apply/{update-id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Mark a specific product update as applied to a subscription",
+                    "nickname": "applyUpdate",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "app-id-guid",
+                            "type": "string",
+                            "required": true,
+                            "description": "The GUID-style ID in the apps.id section of the user's subscription"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "update-id",
+                            "type": "string",
+                            "required": true,
+                            "description": "The identifier of the update from the updates query (field rows[x].cinx_id.id)"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        }
+    ],
+    "produces": [
+        "application/json"
+    ]
+}

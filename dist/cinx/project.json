@@ -1,0 +1,77 @@
+{
+    "basePath": "https://api.cinx.com",
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "resourcePath": "/project",
+    "apis": [
+        {
+            "path": "/sub/{sub-guid}/project/{project-guid}/delete",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Delete the specified project",
+                    "nickname": "deleteProject",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "sub-guid",
+                            "type": "string",
+                            "required": true,
+                            "description": "GUID of the subscription, from earlier subscription query"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "hph-code",
+                            "type": "string",
+                            "required": true,
+                            "description": "Project GUID from the rows[].cinx_id.id field in project list query"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        },
+        {
+            "path": "/sub/{sub-guid}/project/{project-guid}/details",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Get the details of the given project",
+                    "nickname": "projectDetails",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "sub-guid",
+                            "type": "string",
+                            "required": true,
+                            "description": "GUID of the subscription, from earlier subscription query"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "hph-code",
+                            "type": "string",
+                            "required": true,
+                            "description": "Project GUID from the rows[].cinx_id.id field in project list query"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol. If project is not found, response.status_code field == 404"
+                }
+            ]
+        }
+    ],
+    "produces": [
+        "application/json"
+    ]
+}

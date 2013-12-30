@@ -1,0 +1,87 @@
+{
+    "basePath": "https://api.cinx.com",
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "resourcePath": "/subscriptions",
+    "apis": [
+        {
+            "path": "/sub/{app-guid}/verify/{type}/{sub-type}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Verify that the user has access to a specific feature of a specific application",
+                    "nickname": "verifySubscriptionSpecific",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "app-guid",
+                            "type": "string",
+                            "required": true,
+                            "description": "The application GUID"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "type",
+                            "type": "string",
+                            "required": true,
+                            "description": "Top-level subscription type filter",
+                            "enum": [
+                                "data-source",
+                                "integration"
+                            ]
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "sub-type",
+                            "type": "string",
+                            "required": true,
+                            "description": "Sub-type subscription type filter",
+                            "enum": [
+                                "partner",
+                                "vendor",
+                                "erp",
+                                "import-export"
+                            ]
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        },
+        {
+            "path": "/verify",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Verify that the user has access to a specific application",
+                    "nickname": "verifySubscription",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "app-guid",
+                            "type": "string",
+                            "required": true,
+                            "description": "The application GUID"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Invalid user name/password"
+                        }
+                    ],
+                    "notes": "Uses HTTP AUTH protocol."
+                }
+            ]
+        }
+    ],
+    "produces": [
+        "application/json"
+    ]
+}

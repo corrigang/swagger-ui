@@ -1,0 +1,29 @@
+{
+    "basePath": "https://api.cinx.com",
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "resourcePath": "/sub",
+    "apis": [
+        {
+            "path": "/sub/{org-id}/project/{guid}/details",
+            "operations": [
+                {
+                    "method": "GET",
+                    "nickname": "projectDetails",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "org-id",
+                            "description": "Organization ID code, ie org-1234-5678"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "guid",
+                            "description": "GUID identifier of the project."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
