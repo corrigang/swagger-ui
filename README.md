@@ -1,5 +1,5 @@
-Swagger UI
-==========
+Swagger UI - CINX
+=================
 
 Swagger UI is part of [Swagger](http://swagger.wordnik.com/) project.  The Swagger project allows you to produce, visualize and consume your OWN RESTful services.  No proxy or 3rd party services required.  Do it your own way.
 
