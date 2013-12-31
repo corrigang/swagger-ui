@@ -5,5 +5,5 @@ cd /var/www/swagger-ui
 
 git commit -a
 
-git push origin cinx
+git push origin cinx-beta
 
